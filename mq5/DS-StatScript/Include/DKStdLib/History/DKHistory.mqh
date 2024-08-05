@@ -167,11 +167,25 @@ bool CDKHistoryPositionList::GetSummaryByIndex(const int _idx, DKHistoryPos& _po
   CArrayObj *arr;
   if(!GetDealsByIndex(_idx, arr)) return false; 
   
-  _pos.Count = 0;
-  _pos.Commission = 0;
-  _pos.Swap = 0;
-  _pos.Profit = 0;
-  _pos.Fee = 0;    
+   _pos.Count = 0;
+   _pos.Magic = 0;
+   _pos.DealInTicket = 0;
+   _pos.DealOutTicket = 0;
+   _pos.VolumeIn = 0;
+   _pos.PriceIn = 0;
+   _pos.PriceOut = 0;
+   _pos.Commission = 0;
+   _pos.Swap = 0;
+   _pos.Profit = 0;
+   _pos.Fee = 0;
+   _pos.SLIn = 0;
+   _pos.TPIn = 0;
+   _pos.TimeIn = 0;
+   _pos.TimeOut = 0;
+   _pos.DurationSec = 0;
+   _pos.Symbol = "";
+   _pos.Comment = "";  
+
   for(int i=0;i<arr.Total();i++) {
     CDKHistoryDeal* curr_deal = arr.At(i);
     
